@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue js Basics</title>
+</head>
+<body>
+	
+	<!-- All directives in Vue start with v- e.g. v-model -->
+	<div id = "root">
+		<!-- if we use value to the input then we need to use model directory -->
+		<input type="text" id = "input" v-model="message">
+
+		<p>The value of the input is: {{message}}.</p>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+	
+	<script type="text/javascript">
+		// let data = {
+		// 	message : 'Hello world' 
+		// };
+
+		// Create Vue instance
+		// new Vue({
+		// 	// Surface area of the Vue and binding data with this surface area
+		// 	el : '#root',
+		// 	// Speify the data
+		// 	data : data
+		// })
+
+		// We can also use data in inline like that
+		new Vue({
+			el : '#root',
+
+			data : {
+				message : 'Hello World'
+			}
+		})
+	</script>
+</body>
+</html>
