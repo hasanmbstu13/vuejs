@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue Event Listeners</title>
+</head>
+<body>
+	<div id="root">
+		
+		<ul>
+			<li v-for="name in names" v-text="name"></li>
+		</ul>
+		<!-- v-model directive to create two-way data bindings on form input and textarea elements -->
+		<input id="input" type="text" v-model="newName">
+		<!-- <button v-on:click="addName">Add Name</button> -->
+		<button @click="addName">Add Name</button>
+	
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+	<script type="text/javascript">
+		var app = new Vue({
+			el:'#root',
+
+			data: {
+				newName:'',
+				names:['Joe', 'Marry', 'Jane', 'Jack']
+			},
+
+			methods: {
+				addName() {
+					// this.names referencing the property of data object 
+					this.names.push(this.newName);
+					this.newName='';
+				}
+			}
+		});
+	</script>
+</body>
+</html>
