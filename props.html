@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Props</title>
+</head>
+<body>
+
+	<div id = "props">
+		<blog-post title = "Golden Times"></blog-post>
+		<blog-post title = "A brief history of time"></blog-post>
+		<blog-post title = "Never end"></blog-post>
+		<blog-post title = "Lie down"></blog-post>
+	</div>
+	
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+	<script type="text/javascript">
+		// Props are custom attributes we can register on a component. When a value is passed to a prop attribute, it becomes a property on that component instance. 
+		
+		Vue.component('blog-post', {
+			props: ['title'],
+			template: '<h3>{{ title }}</h3>'
+		});
+
+		new Vue({ el : '#props' });
+	</script>
+</body>
+</html>

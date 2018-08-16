@@ -20,7 +20,13 @@
 	<!-- Dynamic component is created using the following syntax. -->
 	<!-- <component v-bind:is = "view"></component> It has v-bind:is = ”view”, and a value view is assigned to it. -->
 
+	<!-- <div id="components-demo">
+	  <button-counter></button-counter>
+	</div> -->
+
 	<div id="components-demo">
+	  <button-counter></button-counter>
+	  <button-counter></button-counter>
 	  <button-counter></button-counter>
 	</div>
 
@@ -97,6 +103,8 @@
 		})
 
 		new Vue({ el: '#components-demo' });
+
+		// A component’s data option must be a function, so that each instance can maintain an independent copy of the returned data object
 		
 	</script>
 </body>
