@@ -11,6 +11,16 @@
 		<blog-post title = "Never end"></blog-post>
 		<blog-post title = "Lie down"></blog-post>
 	</div>
+
+	<div id = "app">
+		<!-- kebab-case in HTML -->
+		<prop-blog post-title="hello!"></prop-blog>
+	</div>
+
+	<div id = "myApp">
+		<!-- kebab-case in HTML -->
+		<prop-blog title="End of Time!"></prop-blog>
+	</div>
 	
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 	<script type="text/javascript">
@@ -22,6 +32,22 @@
 		});
 
 		new Vue({ el : '#props' });
+
+		Vue.component('prop-blog', {
+		  // camelCase in JavaScript
+		  props: ['postTitle'],
+		  template: '<h3>{{ postTitle }}</h3>'
+		});
+
+		new Vue({ el : '#app' });
+
+		Vue.component('prop-blog', {
+			props: ['title'],
+			template: '<h2>{{ title }}</h2>'
+		})
+
+		new Vue({ el : '#myApp' });
+
 	</script>
 </body>
 </html>
